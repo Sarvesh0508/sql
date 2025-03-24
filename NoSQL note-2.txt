@@ -59,3 +59,36 @@ db.collection_name.insertMany([{"title":"python","Description":"programming lang
 db.collection_name.createIndex({title:"text",description:"text"})
 db.collection_name.find({$text:{$search:"python"}})
 
+11th:
+xml:
+<dependency>
+    <groupId>org.mongodb</groupId>
+    <artifactId>mongo-java-driver</artifactId>
+    <version>4.6.0</version> <!-- Make sure to use the latest version -->
+</dependency>
+java:
+import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.MongoCollection;
+import org.bson.Document;
+import com.mongodb.client.FindIterable;
+public class MongoDBExample {
+    public static void main(String[] args) {
+        String uri = "mongodb://localhost:27017";
+        MongoClient mongoClient = MongoClients.create(uri);
+        MongoDatabase database = mongoClient.getDatabase("your_database_name");
+        MongoCollection<Document> collection = database.getCollection("your_collection_name");
+        FindIterable<Document> documents = collection.find();
+        for (Document document : documents) {
+            System.out.println(document.toJson());
+        }
+        mongoClient.close();
+    }
+}
+mongodb shell:
+import com.mongodb.client.model.Filters;
+FindIterable<Document> documents = collection.find(Filters.eq("name", "Alice"));
+
+
+
