@@ -56,6 +56,6 @@ db.collection_name.deleteOne({name:”sarvesh”});
 10th:
 db.createCollection("collection_name");
 db.collection_name.insertMany([{"title":"python","Description":"programming language"},{"title":"java","description":"programming language"}]) 
-db.myCollection.createIndex({title:"text",description:"text"})
-db.myCollection.find({$text:{$search:"python"}})
+db.collection_name.createIndex({title:"text",description:"text"})
+db.collection_name.find({$text:{$search:"python"}})
 
