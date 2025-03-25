@@ -1,0 +1,89 @@
+Steps to Create the Application:
+Open Android Studio.
+Create a new project with the Empty Activity template.
+Set the language to Java.
+Use the code below for the components.
+MainActivity.java
+package com.example.simplemenu;
+
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.Toast;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+
+    // Inflate the menu
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
+   }
+
+    // Handle menu item clicks
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.option1:
+                Toast.makeText(this, "Option 1 selected", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.option2:
+                Toast.makeText(this, "Option 2 selected", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.option3:
+                Toast.makeText(this, "Option 3 selected", Toast.LENGTH_SHORT).show();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+}
+res/menu/main_menu.xml
+This file defines the menu items.
+Navigate to the res folder.
+Create a new menu resource file by right-clicking on res, then selecting New > Android Resource Directory. Name it menu.
+Inside the menu directory, create a new menu resource file and name it main_menu.xml.
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/option1"
+        android:title="Option 1" />
+    <item
+        android:id="@+id/option2"
+        android:title="Option 2" />
+    <item
+        android:id="@+id/option3"
+        android:title="Option 3" />
+</menu>
+
+activity_main.xml
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#FFFFFF">
+
+    <TextView
+ android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome to the Menu App"
+        android:textSize="20sp"
+        android:textColor="#000000" />
+</LinearLayout>
+
+Running the Application:
+Build and run the app on an emulator or Android device.
+Tap the three-dot menu icon in the top-right corner to view the menu options.
+Select an option, and a Toast message will appear indicating the selected item.
+

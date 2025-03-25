@@ -1,0 +1,100 @@
+Steps to Create the Application:
+Open Android Studio.
+Create a new project and select Empty Activity as the template.
+Set the language to Java.
+Use the following code for the main components.
+MainActivity.java
+package com.example.lifecycleapp;
+
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+import android.util.Log;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity {
+
+    private static final String TAG = "Lifecycle";
+    private TextView textViewStatus;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        textViewStatus = findViewById(R.id.textViewStatus);
+        updateStatus("onCreate");
+
+        Log.d(TAG, "onCreate called");
+    }
+ @Override
+    protected void onStart() {
+        super.onStart();
+        updateStatus("onStart");
+        Log.d(TAG, "onStart called");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        updateStatus("onResume");
+        Log.d(TAG, "onResume called");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        updateStatus("onPause");
+        Log.d(TAG, "onPause called");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        updateStatus("onStop");
+        Log.d(TAG, "onStop called");
+ }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        updateStatus("onRestart");
+        Log.d(TAG, "onRestart called");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        updateStatus("onDestroy");
+        Log.d(TAG, "onDestroy called");
+    }
+
+    private void updateStatus(String status) {
+        textViewStatus.setText("Current State: " + status);
+    }
+}
+
+activity_main.xml
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+ android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp"
+    android:background="#FFFFFF">
+
+    <TextView
+        android:id="@+id/textViewStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lifecycle State"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        android:gravity="center" />
+</LinearLayout>
+
+Running the Application:
+Launch the app on an emulator or device.
+Perform actions like minimizing, reopening, or closing the app to observe lifecycle transitions.
+Check the Logcat for detailed logs of the lifecycle methods being called.
