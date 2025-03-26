@@ -1,3 +1,5 @@
+Ex.6 Create a page using intent and one button and pass the values from one activity to other
+
 AIM: To design an android application to design a page using Intent and one Button and pass the Values  from one Activity to second Activity. 
 Main Activity Java File 
 package com.example.transferofdata; 
