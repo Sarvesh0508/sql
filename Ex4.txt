@@ -1,3 +1,5 @@
+Ex.4 Android application for the menu
+
 Steps to Create the Application:
 Open Android Studio.
 Create a new project with the Empty Activity template.
