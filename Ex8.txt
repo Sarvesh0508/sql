@@ -1,4 +1,6 @@
- Code for MainActivity.java 
+Ex.8 Login module(username and password)
+
+Code for MainActivity.java 
   
 package com.example.nkredy.mrcet; 
 import android.os.Bundle; 
