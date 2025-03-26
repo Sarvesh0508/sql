@@ -1,3 +1,5 @@
+Ex.9 Send SMS
+
 AIM : To design an android application Send SMS using Intent. MainActivity.java 
 package com.example.sms; 
 import android.os.Bundle; 
