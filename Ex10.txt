@@ -1,3 +1,5 @@
+Ex.10 Sqlite database storage method
+
 DbHandler.java 
 package com.tutlane.sqliteexample; 
 import android.content.ContentValues; 
